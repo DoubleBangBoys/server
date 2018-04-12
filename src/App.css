@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'AmazonFont';
+  src: url('./fonts/amazon.woff2') format('woff2');
+}
+body {
+  margin: 30px;
+  font-size: 99px;
+  font-family: 'AmazonFont', sans-serif;
+}
+
 .App {
   text-align: center;
 }

@@ -1,12 +1,5 @@
-
-/**
- * @param the best database known to mankind
- */
 const pg = require('pg')
 const fake = require('faker')
-
-
-
 
 var config = {
   user: 'mrmac', // env var: PGUSER
@@ -15,11 +8,11 @@ var config = {
   port: 5000, // env var: PGPORT
 }
 
-const pool = new pg.Pool(config)
-
 /*
 taken from postgres docs to query with async/await
 */
+const pool = new pg.Pool(config)
+
 async function query (q) {
   const client = await pool.connect()
   let res
@@ -48,23 +41,3 @@ async function main () {
 }
 
 main()
-
-
-// create 150 objects
-// each object has
-
-// 1) Title
-// 2) Brand Name
-// 3) a shipping price that is either 0, 0, 0, or a random number from $399 - 999 
-// 4) IsCustomerPrimeMember = random bool
-// 5) Inventory Amount random integer from 0-250
-// 6) Random number of descriptions starting at 0-5
-// 7) 
-// Random number of 5*
-// Random number of 4*
-// Random number of 3*
-// Random number of 2*
-// Random number of 1*
-
-
-// Total Review Stars, Review Total put later

@@ -15,4 +15,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.sendFile('index.html')) 
 
-app.listen(4000, () => console.log('Example app listening on port 4000!', CompiledFiles))
+app.listen(4000, () => console.log('Shamazon Electronic Display Component listening on port 4000!', CompiledFiles))

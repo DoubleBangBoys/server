@@ -11,6 +11,10 @@ var config = {
 /*
 taken from postgres docs to query with async/await
 */
+
+
+
+
 const pool = new pg.Pool(config)
 
 async function query (q) {

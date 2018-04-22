@@ -9,8 +9,7 @@
 // This link also includes instructions on opting out of this behavior.
 
 
-
-const isLocalhost = Boolean(
+const isLocalhost = Boolean (
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
@@ -20,7 +19,6 @@ const isLocalhost = Boolean(
     )
 );
 
-console.log("Testsetsetsteetsetsetstetset!!!!!!!!!!!!!!")
 export default function register() {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.

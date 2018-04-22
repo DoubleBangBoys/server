@@ -3,12 +3,18 @@
   src: url('./fonts/amazon.woff2') format('woff2');
 }
 
+@font-face{
+  font-family: 'AmazonFontBold';
+  src: url('./fonts/amazonBold.woff2') format('woff2');
+}
+
 body {
   margin: 30px;
   font-size: 25px;
   font-family: 'AmazonFont', sans-serif;;
 }
   b {
+    font-family: 'AmazonFontBold', sans-serif;;
     font-weight: 700;
   }
 
@@ -129,8 +135,7 @@ a:hover {
   color:#B12704!important
 }
 .amazon-icon {
-    /* background-image: url(file:///Users/mrmac/zebra/Description-Server/public/Images-To-Redis/BasicLowResIcons.png); */
-    background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-7233320d393c05a5508cf7d579641c4b327cbda4._V2_.png);
+    background-image: url(./Images-To-Redis/ShamazonIcons.png);
     -webkit-background-size: 400px 900px;
     background-size: 400px 900px;
     background-repeat: no-repeat;
@@ -139,18 +144,12 @@ a:hover {
 }
 
 .ifItemPrimeImage {
-    background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_1x-7233320d393c05a5508cf7d579641c4b327cbda4._V2_.png);
+    background-image: url(./Images-To-Redis/ShamazonIcons.png);
     height: 15px;
     width: 54px;
     background-position: -5px -490px;
     vertical-align: baseline;
 }
-
-.reviewImage {
-  /* color: #111; */
-  /* url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIBaseCSS-sprite_2x-01a49470266a51f632dab1aef2fc09112d280c1e._V2_.png) */
-}
-
 
 .Title {
   font-size: 21px!important;

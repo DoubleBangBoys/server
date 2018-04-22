@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 
 class CustomerReviews extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() { 
         return ( 
-        
             <div id="customerReviews">
                     {/* create a function that creates dynamic Classnames for astar */}
                 <div id="averageCustomerReviewImage" className={`icon-star astar-${this.props.starIcon} amazon-icon`} 
@@ -24,4 +20,3 @@ class CustomerReviews extends Component {
 }
  
 export default CustomerReviews;
-

@@ -2,21 +2,17 @@
 import React, { Component } from 'react';
 
 class Title extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() { 
-
-    return (
-        <span>
-            <div id="brandNameInTitle" className="brand">
-            <a href="#">{this.props.brandName}</a>
-            </div>
-            <div id="productNameInTitle" className="Title">
-            {this.props.titleName}
-            </div>
-        </span>
-    )
+        return (
+            <span>
+                <div id="brandNameInTitle" className="brand">
+                <a href="#">{this.props.brandName}</a>
+                </div>
+                <div id="productNameInTitle" className="Title">
+                {this.props.titleName}
+                </div>
+            </span>
+        )
     }
 }
  

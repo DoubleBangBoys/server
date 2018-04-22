@@ -158,6 +158,7 @@ class App extends Component {
 
   //  Refactor Description into Array. Do it in Database Query after MVP
 
+
   getArraysAndRender = () => {
     let array = [];
     for(var i = 1; i < 6; i++){
@@ -168,26 +169,25 @@ class App extends Component {
   
   render() { 
     return (      
-    <div className="App">
+      <div className="App">
+          <div id="flexBox" className="feature">
+            <Title brandName={this.state.data[0]["Brand Name"]}
+                  titleName={this.state.data[0].Title}
+            />
+            <CustomerReviews starIcon={this.renderStarIcon()}
+                            averageStars={this.averageStars()}
+                            totalStars={this.state.data[0]["Total Review Stars"]}/>
 
-      <div id="flexBox" className="feature">
-      
-        <Title brandName={this.state.data[0]["Brand Name"]}
-              titleName={this.state.data[0].Title}
-        />
-        <CustomerReviews starIcon={this.renderStarIcon()}
-                         averageStars={this.averageStars()}
-                         totalStars={this.state.data[0]["Total Review Stars"]}/>
+            <PriceBox stringPrice={this.renderedPrice()}/>
+            <Stock renderInventory={this.renderedTotalInventory()} />
+            <ItemDescription array={this.getArraysAndRender()} />
 
-        <PriceBox stringPrice={this.renderedPrice()}/>
-        <Stock renderInventory={this.renderedTotalInventory()} />
-        <ItemDescription array={this.getArraysAndRender()} />
-
-        <div id="Compare With Similar Items">
-          <a href="#">Compare with similar items</a>
-        </div>
-      </div>
-  </div> )
+            <div id="Compare With Similar Items">
+              <a href="#">Compare with similar items</a>
+            </div>
+          </div>
+      </div> 
+    )
   }
 }
  

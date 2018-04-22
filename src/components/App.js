@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
+
+import Title from './Title';
+import CustomerReviews from './customerReviews';
+// import title.js
 
 class App extends Component {
   constructor(props) {
@@ -163,30 +167,19 @@ class App extends Component {
   render() { 
     return (      
     <div className="App">
-      <div id="titleBlock" className="feature">
-        <div id="brandNameInTitle" className="brand">
-          <a href="#">{this.state.data[0]["Brand Name"]}</a>
-          {/* Stretch: put a link here that goes to brandId */}
-        </div>
-        <div id="productNameInTitle" className="Title">
-          {this.state.data[0].Title}
-        </div>
 
+      <div id="flexBox" className="feature">
+        {/* Title */}
+      
+        <Title brandName={this.state.data[0]["Brand Name"]}
+              titleName={this.state.data[0].Title}
+        />
+        
 
+        <CustomerReviews starIcon={this.renderStarIcon()}
+                         averageStars={this.averageStars()}
+                         totalStars={this.state.data[0]["Total Review Stars"]}/>
 
-        <div id="customerReviews">
-        {/* create a function that creates dynamic Classnames for astar */}
-           <div id="averageCustomerReviewImage" className={`icon-star astar-${this.renderStarIcon()} amazon-icon`} aria-label={this.averageStars()} title={`${this.averageStars()} out of 5 stars`}> 
-           </div>
-           <div id="iconDropDownHover" className="dropDown amazon-icon"> </div>
-           {/* <div className="ifItemPrimeImage"></div> */}
-          
-           <span id="totalReviews" className="fivepxLeft">
-           <a href="#">{this.state.data[0]["Total Review Stars"]} customer reviews</a>
-         
-           {/* Link to all reviews and a link with all reviews */}
-           </span>
-        </div>
 
 
 

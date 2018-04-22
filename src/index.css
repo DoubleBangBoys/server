@@ -8,26 +8,42 @@ body {
   font-size: 25px;
   font-family: 'AmazonFont', sans-serif;;
 }
+  b {
+    font-weight: 700;
+  }
 
 .App {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   font-family: 'AmazonFont', sans-serif;
-  display: grid;
   font-size: 13px;
   line-height: 19px;
   color: #111;
+  display:flex;
+  width: 33%;
 }
 
+
+.priceGrid {
+  display:flex;
+}
 .col1{
-  grid-column-start: 1;
+  padding: 0px 5px 0px 0px;
 }
-.col24{
-  grid-column-start: 2;
-  grid-row-end: 5;
+.fivepxLeft{
+  padding: 0px 0px 0px 15px;
 }
 
+ul {
+  list-style: none;
+  margin: 0 0 0 18px;
+  color: #111;
+}
 
+li::before {
+  content: "•"; 
+  color: #949494;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em}
 
 .App-intro {
   font-size: 1005px;

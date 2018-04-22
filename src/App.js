@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import axios from 'axios'
-
-/**
- * research react router. Until then use this test
- */
 
 
 class App extends Component {
   constructor(props) {
     super(props);
+    //sample Data
     this.state = {
-      //Sample Data to scaffold and test//
       data: [{
         "Brand Name": "Oxygen",
         "Description 1": "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
@@ -21,6 +16,7 @@ class App extends Component {
         "Description 5": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
         "Inventory Amount": 0, 
         "Is Customer Prime Member?": false,
+        // currently Prime Member does nothing. All shows as Prime
         "Price": 355,
         "ProductKey": 1,
         "Review Total": 1,
@@ -36,16 +32,16 @@ class App extends Component {
     }
     
   }
-  //Mounting!
-  // componentWillMount(){
-  //   this.serverRequest = axios.get(`http://localhost:4000/products/2`).then((res)=> 
-  //     this.setState({
-  //       data: res.data
-  //     })
-  //   ).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
+
+  componentWillMount(){
+    this.serverRequest = axios.get(`http://localhost:4000/products/75`).then((res)=> 
+      this.setState({
+        data: res.data
+      })
+    ).catch((err) => {
+      console.log(err)
+    })
+  }
 
   
   /**
@@ -166,56 +162,55 @@ class App extends Component {
   
   render() { 
     return (      
-    
     <div className="App">
       <div id="titleBlock" className="feature">
         <div id="brandNameInTitle" className="brand">
           <a href="#">{this.state.data[0]["Brand Name"]}</a>
           {/* Stretch: put a link here that goes to brandId */}
         </div>
-
         <div id="productNameInTitle" className="Title">
           {this.state.data[0].Title}
         </div>
+
+
 
         <div id="customerReviews">
         {/* create a function that creates dynamic Classnames for astar */}
            <div id="averageCustomerReviewImage" className={`icon-star astar-${this.renderStarIcon()} amazon-icon`} aria-label={this.averageStars()} title={`${this.averageStars()} out of 5 stars`}> 
            </div>
-           <div id="iconDropDownHover" className="dropDown amazon-icon"></div>
+           <div id="iconDropDownHover" className="dropDown amazon-icon"> </div>
            {/* <div className="ifItemPrimeImage"></div> */}
           
-           <div id="totalReviews">
+           <span id="totalReviews" className="fivepxLeft">
            <a href="#">{this.state.data[0]["Total Review Stars"]} customer reviews</a>
          
            {/* Link to all reviews and a link with all reviews */}
-           </div>
+           </span>
         </div>
 
-        <div id="PriceBox">
-         {/* Grid that contains elements*/}
-         </div>
-         {/* Create Price Box */}
-        <div id="Price Column 1" className="colorGray col1">
-        {/* Price column 1 */}
-        Price: 
-        </div>
-        <div id="Price Column 2-4" className="col24">
-          <div className="colorRed size-medium">
-            {this.renderedPrice()}
+
+
+        <div id="PriceBox" className="priceGrid">
+         {/* Flex that contains elements*/}
+          <div id="Price Column 1" className="colorGray col1">
+          Price: 
           </div>
-
-
-          {/* Make a function that Renders a Price Block + Prime Image (if Prime) */}
-          {/* Render Free Shipping Options or cost of shipping*/}
-          {/* T */}
-          FREE Shipping on orders over $25—or get<b> FREE Two-Day Shipping</b> with <a href="#">Amazon Prime</a>
+        <div id="Price Column 2-4" className="col24">
+            <div className="colorRed size-medium">
+               {this.renderedPrice()} <span className={`ifItemPrimeImage amazon-icon`}></span>
+            </div>
+            {/* Stretch: Make a function that Renders a Price Block + Prime Image (if Prime) */}
+            <a href="#">FREE Shipping</a> on orders over $25—or get<b> FREE Two-Day Shipping</b> with <a href="#">Amazon Prime</a>
+          </div>
         </div>
          <div id="Stock">
           {this.renderedTotalInventory()}
         {/* Stretch: If Prime Render <b>Want It Day, ...? </b> Order within 20 hrs 3 mins */}
         {/* Do this first~!!! Closing Time is 10 am PST*/}
          </div>
+
+
+
 
          <div id="Description">
          <ul>

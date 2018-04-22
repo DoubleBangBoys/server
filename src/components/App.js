@@ -4,7 +4,9 @@ import axios from 'axios';
 
 import Title from './Title';
 import CustomerReviews from './customerReviews';
-// import title.js
+import PriceBox from './PriceBox.js';
+import Stock from './Stock';
+import ItemDescription from './ItemDescription';
 
 class App extends Component {
   constructor(props) {
@@ -169,54 +171,21 @@ class App extends Component {
     <div className="App">
 
       <div id="flexBox" className="feature">
-        {/* Title */}
       
         <Title brandName={this.state.data[0]["Brand Name"]}
               titleName={this.state.data[0].Title}
         />
-        
-
         <CustomerReviews starIcon={this.renderStarIcon()}
                          averageStars={this.averageStars()}
                          totalStars={this.state.data[0]["Total Review Stars"]}/>
 
+        <PriceBox stringPrice={this.renderedPrice()}/>
+        <Stock renderInventory={this.renderedTotalInventory()} />
+        <ItemDescription array={this.getArraysAndRender()} />
 
-
-
-        <div id="PriceBox" className="priceGrid">
-         {/* Flex that contains elements*/}
-          <div id="Price Column 1" className="colorGray col1">
-          Price: 
-          </div>
-        <div id="Price Column 2-4" className="col24">
-            <div className="colorRed size-medium">
-               {this.renderedPrice()} <span className={`ifItemPrimeImage amazon-icon`}></span>
-            </div>
-            {/* Stretch: Make a function that Renders a Price Block + Prime Image (if Prime) */}
-            <a href="#">FREE Shipping</a> on orders over $25—or get<b> FREE Two-Day Shipping</b> with <a href="#">Amazon Prime</a>
-          </div>
-        </div>
-         <div id="Stock">
-          {this.renderedTotalInventory()}
-        {/* Stretch: If Prime Render <b>Want It Day, ...? </b> Order within 20 hrs 3 mins */}
-        {/* Do this first~!!! Closing Time is 10 am PST*/}
-         </div>
-
-
-
-
-         <div id="Description">
-         <ul>
-            {this.getArraysAndRender().map((param) => 
-                <li>{param}</li>
-                  )}
-          </ul>
-          </div>
-
-          <div id="Compare With Similar Items">
+        <div id="Compare With Similar Items">
           <a href="#">Compare with similar items</a>
-          </div>
-          <div className="amazon-icon"></div>
+        </div>
       </div>
   </div> )
   }

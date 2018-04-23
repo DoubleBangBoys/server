@@ -27,6 +27,7 @@
     "build": "react-scripts build",
     "server": "nodemon server/server.js",
     "test": "react-scripts test --env=jsdom",
+    "eslt": "eslint . --fix",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

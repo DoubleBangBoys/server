@@ -1,15 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router-3';
 
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
-import { Router, Route, Link } from 'react-router-3';
-
 
 import './index.css';
 
-// console.log(Router);
+const indexRender = (props) => {
+  const id = Number(props.location.pathname.substr(1)) || 1;
+  return (
+    <App productkey={id} />
+  );
+};
 
-ReactDOM.render(<App 
-  productkey="22" />, document.getElementById('root'));
-registerServiceWorker();
+render(<Router history={browserHistory}>
+  <Route path="/">
+    <IndexRoute component={indexRender} />
+    <Route path="/:id" component={indexRender} />
+  </Route>
+</Router>, document.getElementById('root'));
+

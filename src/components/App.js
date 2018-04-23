@@ -11,6 +11,7 @@ import ItemDescription from './ItemDescription';
 class App extends Component {
   constructor(props) {
     super(props);
+
     //  sample Data
     this.state = {
       data: [{
@@ -67,8 +68,8 @@ class App extends Component {
         if (reverseShift) {
           precis = -precis;
         }
-        const numArray = ('' + num).split('e');
-        return +(numArray[0] + 'e' + (numArray[1] ? (+numArray[1] + precision) : precision));
+        const numArray = (`${num}`).split('e');
+        return +(`${numArray[0]}e${numArray[1] ? (+numArray[1] + precision) : precision}`);
       };
       return shift(Math.round(shift(number, precision, false)), precision, true);
     };
@@ -125,7 +126,7 @@ class App extends Component {
   renderedPrice() {
     let cents = this.state.data[0].Price.toString().slice(-2);
     if (cents.length === 1) {
-      cents = '0' + cents;
+      cents = `0${cents}`;
     }
 
     const dollars = this.state.data[0].Price.toString().slice(0, -2) || 0;

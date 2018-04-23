@@ -9,7 +9,7 @@ import './index.css';
 const indexRender = (props) => {
   const id = Number(props.location.pathname.substr(1)) || 1;
   return (
-    <App productkey={id} />
+    <App id={id} />
   );
 };
 

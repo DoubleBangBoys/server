@@ -7,7 +7,7 @@ import App from './components/App';
 import './index.css';
 
 const indexRender = (props) => {
-  const id = Number(props.location.pathname.substr(1)) || 1;
+  const id = Number(props.location.pathname.substr(1)) || 0;
   return (
     <App id={id} />
   );

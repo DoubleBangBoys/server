@@ -10,7 +10,7 @@ const pgp = require('pg-promise')();
 const config = {
   host: 'localhost',
   user: 'mrmac', // env var: PGUSER
-  database: 'shamazon_main_description', // env var: PGDATABASE
+  database: 'shamazondb', // env var: PGDATABASE
   password: null, // env var: PGPASSWORD
   port: 5000, // env var: PGPORT
 };

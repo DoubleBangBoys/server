@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.serverRequest = axios.get('http://localhost:4000/products/75').then((res) => {
+    this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.productId}`).then((res) => {
       this.setState({
         data: res.data,
       });
@@ -51,7 +51,7 @@ class App extends Component {
 
   getArraysAndRender() {
     const array = [];
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 6; i += 1) {
       array.push(this.state.data[0][`Description ${i}`]);
     }
     return array;

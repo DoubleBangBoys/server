@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 class ItemDescription extends Component {
   render() {
@@ -12,6 +14,10 @@ class ItemDescription extends Component {
     );
   }
 }
+
+ItemDescription.propTypes = {
+  array: PropTypes.arrayOf(React.PropTypes.string).isRequired,
+};
 
 export default ItemDescription;
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 
 import Title from './Title';
@@ -11,6 +12,10 @@ import ItemDescription from './ItemDescription';
 class App extends Component {
   constructor(props) {
     super(props);
+
+    App.defaultProps = {
+      id: 0,
+    };
 
     //  sample Data
     this.state = {
@@ -24,7 +29,7 @@ class App extends Component {
         'Inventory Amount': 0,
         'Is Customer Prime Member?': false,
         // currently Prime Member does nothing. All shows as Prime
-        Price: 355,
+        Price: 3555,
         ProductKey: 1,
         'Review Total': 1,
         'Shipping Price': 0,
@@ -34,7 +39,7 @@ class App extends Component {
         'Total 3*': null,
         'Total 4*': null,
         'Total 5*': null,
-        'Total Review Stars': 1,
+        'Total Review Stars': 5,
       }],
     };
   }
@@ -188,5 +193,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  id: PropTypes.number,
+};
 
 export default App;

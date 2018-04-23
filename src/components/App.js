@@ -91,7 +91,8 @@ class App extends Component {
    *     high res and low res depending on device/res
    */
   renderStarIcon() {
-    const rounded = parseInt(this.averageStars());
+    const rounded = parseInt(this.averageStars(), 10);
+
     if (rounded < 0.5 && rounded > 0) {
       return '05';
     }

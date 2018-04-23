@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.productId}`).then((res) => {
+    this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.productkey}`).then((res) => {
       this.setState({
         data: res.data,
       });

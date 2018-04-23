@@ -7,7 +7,3 @@ const config = {
   password: null, // env var: PGPASSWORD
   port: 5000, // env var: PGPORT
 };
-
-/*
-taken from postgres docs to query with async/await
-*/

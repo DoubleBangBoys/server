@@ -1,8 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router-3';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from './components/App';
+
+import './index.css';
+
+const indexRender = (props) => {
+  const id = Number(props.location.pathname.substr(1)) || 1;
+  return (
+    <App id={id} />
+  );
+};
+
+render(<Router history={browserHistory}>
+  <Route path="/">
+    <IndexRoute component={indexRender} />
+    <Route path="/:id" component={indexRender} />
+  </Route>
+</Router>, document.getElementById('root'));
+

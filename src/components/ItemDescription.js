@@ -5,10 +5,9 @@ class ItemDescription extends Component {
     return (
       <div id="ItemDescription">
         <ul>
-          {this.props.array.map((param) => <li>{param}</li>)
-             }
+          {this.props.array.map(param => <li>{param}</li>)}
         </ul>
-      </div> 
+      </div>
     );
   }
 }

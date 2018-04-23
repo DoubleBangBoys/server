@@ -16,7 +16,8 @@ class ItemDescription extends Component {
 }
 
 ItemDescription.propTypes = {
-  array: PropTypes.arrayOf(React.PropTypes.string).isRequired,
+  array: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // array: PropTypes.arrayOf(React.PropTypes.string).isRequired,
 };
 
 export default ItemDescription;

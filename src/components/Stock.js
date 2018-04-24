@@ -15,7 +15,7 @@ class Stock extends Component {
 /* Stretch: If Prime Render <b>Want It Day, ...? </b> Order within 20 hrs 3 mins */
 
 Stock.propTypes = {
-  renderInventory: PropTypes.objectOf(PropTypes.string).isRequired,
+  renderInventory: PropTypes.node.isRequired,
 };
 
 export default Stock;

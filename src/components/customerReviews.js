@@ -22,8 +22,8 @@ class CustomerReviews extends Component {
 }
 
 CustomerReviews.propTypes = {
-  starIcon: PropTypes.number.isRequired,
-  averageStars: PropTypes.number.isRequired,
+  starIcon: PropTypes.string.isRequired,
+  averageStars: PropTypes.string.isRequired,
   totalStars: PropTypes.number.isRequired,
 };
 

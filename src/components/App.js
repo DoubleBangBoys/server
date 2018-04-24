@@ -31,15 +31,15 @@ class App extends Component {
         // currently Prime Member does nothing. All shows as Prime
         Price: 3555,
         ProductKey: 1,
-        'Review Total': 1,
+        'Review Total': 6,
         'Shipping Price': 0,
         Title: "Pannewitz's Sedge",
         'Total 1*': 1,
-        'Total 2*': null,
+        'Total 2*': 0,
         'Total 3*': null,
         'Total 4*': null,
         'Total 5*': null,
-        'Total Review Stars': 5,
+        'Total Review Stars': 1,
       }],
     };
   }
@@ -78,10 +78,7 @@ class App extends Component {
       };
       return shift(Math.round(shift(number, precision, false)), precision, true);
     };
-    let rounded = round(this.state.data[0]['Total Review Stars'] / this.state.data[0]['Review Total'], 1).toString();
-    if (rounded.length === 1) {
-      rounded += '.0';
-    }
+    const rounded = round(this.state.data[0]['Total Review Stars'] / (this.state.data[0]['Review Total'] * 5), 1).toString();
     return rounded;
   }
 
@@ -92,6 +89,7 @@ class App extends Component {
    */
   renderStarIcon() {
     const rounded = parseInt(this.averageStars(), 10);
+<<<<<<< HEAD
     if (rounded < 0.5 && rounded > 0) {
       return '05';
     }
@@ -112,17 +110,13 @@ class App extends Component {
     }
     if (rounded > 3.2 && rounded <= 3.7) {
       return '35';
+=======
+    const rendering = (rounded / 2).toString();
+    if (rendering === 0) {
+      return '00';
+>>>>>>> aa6d222a64f85719c3ee1e4c1bc940e0187ef252
     }
-    if (rounded > 3.7 && rounded <= 4.2) {
-      return '40';
-    }
-    if (rounded > 4.2 && rounded <= 4.7) {
-      return '45';
-    }
-    if (rounded > 4.7) {
-      return '50';
-    }
-    return '00';
+    return rendering;
   }
 
   /**
@@ -147,20 +141,15 @@ class App extends Component {
       return (<div id="inStock" className="colorGreen size-medium"> In Stock. </div>);
     } else if (this.state.data[0]['Inventory Amount'] < 15 && this.state.data[0]['Inventory Amount'] > 0) {
       return (<div id="inStockQuantityCount" className="colorRed size-medium"> Only {this.state.data[0]['Inventory Amount']} left in stock (more on the way). </div>);
+<<<<<<< HEAD
     } else {
       return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
     }
+=======
+    }
+    return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
+>>>>>>> aa6d222a64f85719c3ee1e4c1bc940e0187ef252
   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~ THIS IS THE UNDER CONSTRUCTION CATS GARBAGE CODE AWAITS
-   *
-   *      /\_/\              /\_/\               /\_/\
-   *    =( °w° )=          =(ˆ ڡ ˆ)=            (っ˘ڡ˘ς)
-   *      )   (  //          )   (  //       \\  )   (
-   *     (__ __)//          (__ __)//         \\(__ __)
-   *
-   * ~~~~~~~~~~~~~~~~~~~~~~~~~!!!!!!!!!!!!!!!!!!!! DO MORE WORK HERE
-   */
 
   //  Refactor Description into Array. Do it in Database Query after MVP
 

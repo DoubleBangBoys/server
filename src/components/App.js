@@ -89,32 +89,9 @@ class App extends Component {
    */
   renderStarIcon() {
     const rounded = parseInt(this.averageStars(), 10);
-<<<<<<< HEAD
-    if (rounded < 0.5 && rounded > 0) {
-      return '05';
-    }
-    if (rounded > 0.5 && rounded <= 1.2) {
-      return '10';
-    }
-    if (rounded > 1.3 && rounded <= 1.7) {
-      return '15';
-    }
-    if (rounded > 1.8 && rounded < 2.2) {
-      return '20';
-    }
-    if (rounded > 2.2 && rounded <= 2.7) {
-      return '25';
-    }
-    if (rounded > 2.7 && rounded <= 3.2) {
-      return '30';
-    }
-    if (rounded > 3.2 && rounded <= 3.7) {
-      return '35';
-=======
     const rendering = (rounded / 2).toString();
     if (rendering === 0) {
       return '00';
->>>>>>> aa6d222a64f85719c3ee1e4c1bc940e0187ef252
     }
     return rendering;
   }
@@ -141,14 +118,8 @@ class App extends Component {
       return (<div id="inStock" className="colorGreen size-medium"> In Stock. </div>);
     } else if (this.state.data[0]['Inventory Amount'] < 15 && this.state.data[0]['Inventory Amount'] > 0) {
       return (<div id="inStockQuantityCount" className="colorRed size-medium"> Only {this.state.data[0]['Inventory Amount']} left in stock (more on the way). </div>);
-<<<<<<< HEAD
-    } else {
-      return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
-    }
-=======
     }
     return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
->>>>>>> aa6d222a64f85719c3ee1e4c1bc940e0187ef252
   }
 
   //  Refactor Description into Array. Do it in Database Query after MVP

@@ -14,14 +14,14 @@ enzyme.configure({ adapter: new Adapter() });
 //   });
 // });
 
-describe('<ItemDescription />', () => {
-  const wrapper = enzyme.mount(
-    <ItemDescription cats={cats} />
-  );
+// describe('<ItemDescription />', () => {
+//   const wrapper = enzyme.mount(
+//     <ItemDescription cats={cats} />
+//   );
 
-  it('renders child correctly', () => {
-      expect(wrapper.find('tbody').children()).to.have.length(cats.length);
-      expect(wrapper.find('tbody').children().find('tr')).to.have.length(cats.length);
+//   it('renders child correctly', () => {
+//       expect(wrapper.find('tbody').children()).to.have.length(cats.length);
+//       expect(wrapper.find('tbody').children().find('tr')).to.have.length(cats.length);
 
-  });
-});
+//   });
+// });

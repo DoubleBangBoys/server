@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 class PriceBox extends Component {
   render() {
@@ -18,5 +20,9 @@ class PriceBox extends Component {
     );
   }
 }
+
+PriceBox.propTypes = {
+  stringPrice: PropTypes.string.isRequired,
+};
 
 export default PriceBox;

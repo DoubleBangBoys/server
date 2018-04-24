@@ -13,3 +13,10 @@ describe('<App />', () => {
     expect(component).toHaveLength(1);
   });
 });
+
+// it('should call setRelatedProducts when component mounts', () => {
+//   const spy = jest.spyOn(App.prototype, 'setRelatedProducts');
+//   const component = enzyme.mount(<App />);
+//   component.update();
+//   expect(spy).toHaveBeenCalled();
+// });

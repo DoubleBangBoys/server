@@ -116,25 +116,11 @@ class App extends Component {
   renderedTotalInventory() {
     if (this.state.data[0]['Inventory Amount'] > 15) {
       return (<div id="inStock" className="colorGreen size-medium"> In Stock. </div>);
-    }
-    if (this.state.data[0]['Inventory Amount'] < 15 && this.state.data[0]['Inventory Amount'] > 0) {
+    } else if (this.state.data[0]['Inventory Amount'] < 15 && this.state.data[0]['Inventory Amount'] > 0) {
       return (<div id="inStockQuantityCount" className="colorRed size-medium"> Only {this.state.data[0]['Inventory Amount']} left in stock (more on the way). </div>);
     }
-    if (this.state.data[0]['Inventory Amount'] === 0) {
-      return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
-    }
-    return 'lol';
+    return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~ THIS IS THE UNDER CONSTRUCTION CATS GARBAGE CODE AWAITS
-   *
-   *      /\_/\              /\_/\               /\_/\
-   *    =( °w° )=          =(ˆ ڡ ˆ)=            (っ˘ڡ˘ς)
-   *      )   (  //          )   (  //       \\  )   (
-   *     (__ __)//          (__ __)//         \\(__ __)
-   *
-   * ~~~~~~~~~~~~~~~~~~~~~~~~~!!!!!!!!!!!!!!!!!!!! DO MORE WORK HERE
-   */
 
   //  Refactor Description into Array. Do it in Database Query after MVP
 

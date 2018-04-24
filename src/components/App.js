@@ -78,8 +78,8 @@ class App extends Component {
       };
       return shift(Math.round(shift(number, precision, false)), precision, true);
     };
-    const totalReviewsDividedByReviewTotalAndRounded = round(this.state.data[0]['Total Review Stars'] / (this.state.data[0]['Review Total'] * 5), 1).toString();
-    return totalReviewsDividedByReviewTotalAndRounded;
+    const rounded = round(this.state.data[0]['Total Review Stars'] / (this.state.data[0]['Review Total'] * 5), 1).toString();
+    return rounded;
   }
 
   /**
@@ -92,8 +92,8 @@ class App extends Component {
       return '00';
     }
     const rounded = parseInt(this.averageStars(), 10);
-    const renderingStarIcon = (rounded / 2).toString();
-    return renderingStarIcon;
+    const rendering = (rounded / 2).toString();
+    return rendering;
   }
 
   /**
@@ -114,11 +114,9 @@ class App extends Component {
    * Renders remaining Inventory
    */
   renderedTotalInventory() {
-    const TotalInventoryIsSafe = 15;
-
-    if (this.state.data[0]['Inventory Amount'] > TotalInventoryIsSafe) {
+    if (this.state.data[0]['Inventory Amount'] > 15) {
       return (<div id="inStock" className="colorGreen size-medium"> In Stock. </div>);
-    } else if (this.state.data[0]['Inventory Amount'] < TotalInventoryIsSafe && this.state.data[0]['Inventory Amount'] > 0) {
+    } else if (this.state.data[0]['Inventory Amount'] < 15 && this.state.data[0]['Inventory Amount'] > 0) {
       return (<div id="inStockQuantityCount" className="colorRed size-medium"> Only {this.state.data[0]['Inventory Amount']} left in stock (more on the way). </div>);
     }
     return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
@@ -143,7 +141,6 @@ class App extends Component {
           <PriceBox stringPrice={this.renderedPrice()} />
           <Stock renderInventory={this.renderedTotalInventory()} />
           <ItemDescription array={this.getArraysAndRender()} />
-
           <div id="Compare With Similar Items">
             <a href="#">Compare with similar items</a>
           </div>

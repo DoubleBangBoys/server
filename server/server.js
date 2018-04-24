@@ -9,10 +9,10 @@ const pgp = require('pg-promise')();
 
 const config = {
   host: 'localhost',
-  user: 'mrmac', // env var: PGUSER
+  user: 'shamazon', // env var: PGUSER
   database: 'shamazondb', // env var: PGDATABASE
   password: null, // env var: PGPASSWORD
-  port: 5000, // env var: PGPORT
+  port: 5432, // env var: PGPORT
 };
 
 const db = pgp(config);

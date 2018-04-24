@@ -27,8 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "nodemon server/server.js",
-    "test": "react-scripts test --env=jsdom",
-    "test2": "jest --coverage",
+    "test": "jest --coverage",
     "eslt": "eslint . --fix",
     "eject": "react-scripts eject"
   },

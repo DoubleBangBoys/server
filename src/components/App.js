@@ -38,13 +38,8 @@ class App extends Component {
         'Total 2*': 0,
         'Total 3*': null,
         'Total 4*': null,
-<<<<<<< HEAD
-        'Total 5*': 1,
-        'Total Review Stars': 6,
-=======
         'Total 5*': null,
-        'Total Review Stars': 5,
->>>>>>> 8a23a05733a0028db9b3238c82c730c04e510b14
+        'Total Review Stars': 1,
       }],
     };
   }
@@ -94,42 +89,9 @@ class App extends Component {
    */
   renderStarIcon() {
     const rounded = parseInt(this.averageStars(), 10);
-<<<<<<< HEAD
     const rendering = (rounded / 2).toString();
     if (rendering === 0) {
       return '00';
-=======
-
-    if (rounded < 0.5 && rounded > 0) {
-      return '05';
-    }
-    if (rounded > 0.5 && rounded <= 1.2) {
-      return '10';
-    }
-    if (rounded > 1.3 && rounded <= 1.7) {
-      return '15';
-    }
-    if (rounded > 1.8 && rounded < 2.2) {
-      return '20';
-    }
-    if (rounded > 2.2 && rounded <= 2.7) {
-      return '25';
-    }
-    if (rounded > 2.7 && rounded <= 3.2) {
-      return '30';
-    }
-    if (rounded > 3.2 && rounded <= 3.7) {
-      return '35';
-    }
-    if (rounded > 3.7 && rounded <= 4.2) {
-      return '40';
-    }
-    if (rounded > 4.2 && rounded <= 4.7) {
-      return '45';
-    }
-    if (rounded > 4.7) {
-      return '50';
->>>>>>> 8a23a05733a0028db9b3238c82c730c04e510b14
     }
     return rendering;
   }

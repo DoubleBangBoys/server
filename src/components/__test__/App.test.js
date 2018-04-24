@@ -14,6 +14,7 @@ describe('<App />', () => {
   });
 });
 
+// work in progress
 // it('should call setRelatedProducts when component mounts', () => {
 //   const spy = jest.spyOn(App.prototype, 'setRelatedProducts');
 //   const component = enzyme.mount(<App />);

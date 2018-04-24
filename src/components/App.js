@@ -26,15 +26,15 @@ class App extends Component {
         // currently Prime Member does nothing. All shows as Prime
         Price: 355,
         ProductKey: 1,
-        'Review Total': 1,
+        'Review Total': 6,
         'Shipping Price': 0,
         Title: "Pannewitz's Sedge",
         'Total 1*': 1,
-        'Total 2*': null,
+        'Total 2*': 0,
         'Total 3*': null,
         'Total 4*': null,
-        'Total 5*': null,
-        'Total Review Stars': 1,
+        'Total 5*': 1,
+        'Total Review Stars': 6,
       }],
     };
   }
@@ -73,10 +73,7 @@ class App extends Component {
       };
       return shift(Math.round(shift(number, precision, false)), precision, true);
     };
-    let rounded = round(this.state.data[0]['Total Review Stars'] / this.state.data[0]['Review Total'], 1).toString();
-    if (rounded.length === 1) {
-      rounded += '.0';
-    }
+    const rounded = round(this.state.data[0]['Total Review Stars'] / (this.state.data[0]['Review Total'] * 5), 1).toString();
     return rounded;
   }
 
@@ -86,38 +83,12 @@ class App extends Component {
    *     high res and low res depending on device/res
    */
   renderStarIcon() {
-    const rounded = parseInt(this.averageStars());
-    if (rounded < 0.5 && rounded > 0) {
-      return '05';
+    const rounded = parseInt(this.averageStars(), 10);
+    const rendering = (rounded / 2).toString();
+    if (rendering === 0) {
+      return '00';
     }
-    if (rounded > 0.5 && rounded <= 1.2) {
-      return '10';
-    }
-    if (rounded > 1.3 && rounded <= 1.7) {
-      return '15';
-    }
-    if (rounded > 1.8 && rounded < 2.2) {
-      return '20';
-    }
-    if (rounded > 2.2 && rounded <= 2.7) {
-      return '25';
-    }
-    if (rounded > 2.7 && rounded <= 3.2) {
-      return '30';
-    }
-    if (rounded > 3.2 && rounded <= 3.7) {
-      return '35';
-    }
-    if (rounded > 3.7 && rounded <= 4.2) {
-      return '40';
-    }
-    if (rounded > 4.2 && rounded <= 4.7) {
-      return '45';
-    }
-    if (rounded > 4.7) {
-      return '50';
-    }
-    return '00';
+    return rendering;
   }
 
   /**

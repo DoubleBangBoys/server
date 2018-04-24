@@ -35,7 +35,4 @@ app.use(express.static(CompiledFiles));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => res.send('yo!'));
-
-
 app.listen(4000);

@@ -7,18 +7,19 @@ import App from './components/App';
 
 import './index.css';
 
-const indexRender = (props) => {
-  const id = Number(props.location.pathname.substr(1));
-  return (
-    <App id={id} />
-  );
-};
+render(<App />, document.getElementById('root'));
 
-render(<Router history={browserHistory}>
-  <Route path="/">
-    <IndexRoute component={indexRender} />
-    <Route path="/:id" component={indexRender} />
-  </Route>
-</Router>, document.getElementById('root'));
+// const indexRender = (props) => {
+//   const id = Number(props.location.pathname.substr(1));
+//   return (
+//     <App id={id} />
+//   );
+// };
 
-export default indexRender;
+// render(<Router history={browserHistory}>
+//   <Route path="/">
+//     <IndexRoute component={indexRender} />
+//     <Route path="/:id" component={indexRender} />
+//   </Route>
+// </Router>, document.getElementById('root'));
+// export default indexRender;

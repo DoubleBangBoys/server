@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CustomerReviews extends Component {
   render() {
@@ -19,5 +20,11 @@ class CustomerReviews extends Component {
     );
   }
 }
+
+CustomerReviews.propTypes = {
+  starIcon: PropTypes.number.isRequired,
+  averageStars: PropTypes.number.isRequired,
+  totalStars: PropTypes.number.isRequired,
+};
 
 export default CustomerReviews;

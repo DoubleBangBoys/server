@@ -7,6 +7,9 @@ import ItemDescription from '../ItemDescription';
 
 enzyme.configure({ adapter: new Adapter() });
 
+// work in progress
+
+
 // describe('<ItemDescription />', () => {
 //   it('renders 1 <ItemDescription /> component', () => {
 //     const component = enzyme.shallow(<ItemDescription />);

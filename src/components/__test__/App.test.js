@@ -8,8 +8,8 @@ import App from '../App';
 enzyme.configure({ adapter: new Adapter() });
 
 describe('<App />', () => {
+  const component = enzyme.shallow(<App />);
   it('renders 1 <App /> component', () => {
-    const component = enzyme.shallow(<App />);
     expect(component).toHaveLength(1);
   });
 });

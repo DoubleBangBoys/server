@@ -20,3 +20,4 @@ render(<Router history={browserHistory}>
   </Route>
 </Router>, document.getElementById('root'));
 
+export default indexRender;

@@ -31,15 +31,15 @@ class App extends Component {
         // currently Prime Member does nothing. All shows as Prime
         Price: 3555,
         ProductKey: 1,
-        'Review Total': 6,
+        'Review Total': 0,
         'Shipping Price': 0,
         Title: "Pannewitz's Sedge",
-        'Total 1*': 1,
+        'Total 1*': 0,
         'Total 2*': 0,
         'Total 3*': null,
         'Total 4*': null,
         'Total 5*': null,
-        'Total Review Stars': 1,
+        'Total Review Stars': 0,
       }],
     };
   }
@@ -88,11 +88,11 @@ class App extends Component {
    *     high res and low res depending on device/res
    */
   renderStarIcon() {
-    const rounded = parseInt(this.averageStars(), 10);
-    const rendering = (rounded / 2).toString();
-    if (rendering === 0) {
+    if (this.state.data[0]['Review Total'] === 0) {
       return '00';
     }
+    const rounded = parseInt(this.averageStars(), 10);
+    const rendering = (rounded / 2).toString();
     return rendering;
   }
 

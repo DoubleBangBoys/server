@@ -8,8 +8,8 @@ import CustomerReviews from '../customerReviews';
 enzyme.configure({ adapter: new Adapter() });
 
 describe('<CustomerReviews />', () => {
+  const component = enzyme.shallow(<CustomerReviews />);
   it('renders 1 <CustomerReviews /> component', () => {
-    const component = enzyme.shallow(<CustomerReviews />);
     expect(component).toHaveLength(1);
   });
 });

@@ -9,8 +9,8 @@ enzyme.configure({ adapter: new Adapter() });
 
 describe('<PriceBox />', () => {
   // const wrapper = enzyme.mount(<PriceBox stringPrice="19.33" />);
+  const component = enzyme.shallow(<PriceBox stringPrice="19.33" />);
   it('renders 1 <PriceBox /> component', () => {
-    const component = enzyme.shallow(<PriceBox stringPrice="19.33" />);
     expect(component).toHaveLength(1);
   });
 });
